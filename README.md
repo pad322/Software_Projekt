@@ -2,7 +2,6 @@
 
 Projekt neve : Quiz ( Brain Fighters )
 
-Projekt tagok :
-	Fodor Lehel
-	Stoica Attila
-	Török Csongor
+Projekt tagok : Fodor Lehel
+		Stoica Attila
+		Török Csongor
