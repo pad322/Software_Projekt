@@ -1,6 +1,6 @@
 # Software_Projekt
 
-Projekt neve : Quiz ( Brain Fighters )
+Projekt neve : Obstacle game ( Squares Dash )
 
 Projekt tagok : Fodor Lehel,
 		Stoica Attila,
