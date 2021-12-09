@@ -18,8 +18,6 @@ MainWindow::MainWindow(QWidget *parent)
     context->makeCurrent(this);
 
     openGLFunctions = context->functions();
-
-
 }
 
 
@@ -93,7 +91,7 @@ void MainWindow::bopping()
 float triangle_distance_a=-70;
 float triangle_distance_b=-70;
 unsigned int speed = 1, wait = 0;
-unsigned int score = 0;
+float score = 0.0;
 
 void MainWindow::paintGL()
 {
@@ -265,6 +263,10 @@ void MainWindow::paintGL()
         glEnd();
     }
     //
+    //score display
+
+    //
+
     glFlush();
     if( started != true){
         started = true;
@@ -290,6 +292,7 @@ void MainWindow::paintEvent(QPaintEvent *event)
 void MainWindow::updateAnimation()
 {
     this->update();
+    score+=0.1;
     //triangle speed
     triangle_distance_a += speed;
     tree1 += speed;
@@ -375,12 +378,12 @@ void MainWindow::updateAnimation()
     QLabel* label=new QLabel("Squares dash");
     if(triangle_distance_a==0 && ((square_corner1 == triangle_coord1)||(square_corner1 == triangle_coord2)))
     {
-        QMessageBox::warning(label,"Game Over", "Score: ");
+        QMessageBox::warning(label,"Game Over", QString("Score: %1").arg(score));
         exit(1);
     }
     if(triangle_distance_b==0 && (square_corner1 == triangle_coord3))
     {
-        QMessageBox::warning(label,"Game Over", "Score: ");
+        QMessageBox::warning(label,"Game Over", QString("Score: %1").arg(score));
         exit(1);
     }
     //
