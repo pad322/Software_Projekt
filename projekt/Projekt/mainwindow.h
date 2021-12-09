@@ -17,19 +17,16 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    GLfloat x=-1,y=-4.8,z=-7.4;
-    GLfloat xx=1,yy=10,zz=-70;
-    GLfloat cucc1=2.0,cucc2=0.0;
-    GLfloat ut_bal=-2.0, ut_kozep=2.0, ut_jobb=6.0;
-    GLfloat koord = 2.0;
-    GLfloat koord2;
-    GLfloat koord3 = -2.0;
-    GLfloat fa1 = -10.0, fa2 = -15, fa3 = -27.5, fa4 = -32.5, fa5 = -45, fa6 = -50, fa7 = -62.5, fa8 = -67.5;
+    GLfloat x=-1,y=-4.8,z=-7.4; //-> for camera, point of view
+    GLfloat sun_x=1,sun_y=10,sun_z=-70;
+    GLfloat square_corner1=2.0,square_corner2=0.0;
+    GLfloat road_left=-2.0, road_middle=2.0, road_right=6.0;
+    GLfloat coord1 = 2.0;
+    GLfloat coord2;
+    GLfloat coord3 = -2.0;
+    GLfloat tree1 = -10.0, tree2 = -15, tree3 = -27.5, tree4 = -32.5, tree5 = -45, tree6 = -50, tree7 = -62.5, tree8 = -67.5;
     GLfloat twicePi = 2.0f * 3.14;
     bool started = true;
-
-    // -6.8 -4.8 -7.4
-    // 4.8 -4.8 -7.4
 
 protected:
     virtual void initializeGL() override;
@@ -42,14 +39,10 @@ protected:
 public slots:
     void updateAnimation();
     void bopping();
-    //void coming();
-    //void triangles();
 
 private:
     QOpenGLContext *context;
     QOpenGLFunctions  *openGLFunctions;
     void glPerspective( GLdouble fov, GLdouble aspectRatio, GLdouble zNear, GLdouble zFar );
-
-    //float rotation;
 };
 #endif // MAINWINDOW_H
